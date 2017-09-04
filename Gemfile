@@ -77,3 +77,6 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # Notifications to Slack
 gem 'slack-notify'
+
+# Run a scheduled job
+gem 'whenever', :require => false
