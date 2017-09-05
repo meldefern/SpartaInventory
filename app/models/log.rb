@@ -4,4 +4,8 @@ class Log < ApplicationRecord
 
   attr_accessor :borrower, :lender , :returned_to
 
+  def method_to_schedule
+  	puts "scheduled"
+  end
+
 end
