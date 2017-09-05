@@ -2,6 +2,4 @@
 
 require_relative 'config/environment'
 
-require 'slack-notify'
-
 run Rails.application

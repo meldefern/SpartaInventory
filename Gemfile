@@ -24,7 +24,11 @@ gem 'devise'
 gem 'rack-cors', :require => 'rack/cors'
 gem 'httparty', '~> 0.13.7'
 
+############## Gem for cron job ################
+gem 'whenever', :require => false
 
+############## Gem for slack notifications ################
+gem "slack-notify"
 
 #############################
 
@@ -74,9 +78,3 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
-
-# Notifications to Slack
-gem 'slack-notify'
-
-# Run a scheduled job
-gem 'whenever', :require => false
