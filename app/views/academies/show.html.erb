@@ -1,9 +1,14 @@
-<p id="notice"><%= notice %></p>
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-xs-12 col-lg-4">
+			
+			<p>
+			  <strong>Name:</strong>
+			  <%= @academy.name %>
+			</p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @academy.name %>
-</p>
-
-<%= link_to 'Edit', edit_academy_path(@academy) %> |
-<%= link_to 'Back', academies_path %>
+			<%= link_to 'Edit', edit_academy_path(@academy) %> |
+			<%= link_to 'Back', academies_path %>
+	  </div>
+  </div>
+</div>
