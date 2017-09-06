@@ -16,13 +16,17 @@
           </div>
           <div>
       </div>
-      <div class="col-xs-12">
-        <div id="tab" class="btn-group" data-toggle="buttons-radio">
-          <a href="#prices" class="btn active" data-toggle="tab">Prices</a>
-          <a href="#features" class="btn" data-toggle="tab">Features</a>
-          <a href="#requests" class="btn" data-toggle="tab">Requests</a>
-          <a href="#contact" class="btn"  data-toggle="tab">Contact</a>
-        </div>
+      <div class="btn-group" data-toggle="buttons">
+        <label class="btn btn-primary active">
+          <input type="radio" name="options" id="option1" autocomplete="off" checked> All
+        </label>
+        
+        <%@academies.each do |academy|%>
+          <label class="btn btn-primary">
+            <input type="radio" name="options" id="option2" autocomplete="off"><%=academy.name%>
+          </label>
+        <%end%>
+
       </div>
       <div class="col-xs-12">
           </div>
