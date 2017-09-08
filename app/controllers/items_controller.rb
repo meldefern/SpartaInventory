@@ -5,7 +5,6 @@ class ItemsController < ApplicationController
   # GET /items
   # GET /items.json
   def index
-    # @items = Item.order(:id)
     @items = Item.order(:id)
     @academies = Academy.all
     @date = Date.current
