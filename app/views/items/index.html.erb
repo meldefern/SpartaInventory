@@ -14,22 +14,7 @@
               Out : <%= @out %>
             </div>
           </div>
-          <div>
-            <div class="btn-group" data-toggle="buttons">
-              <label class="btn btn-primary active">
-                <input type="radio" name="options" value="all" autocomplete="off" checked> All
-              </label>
-              <% @academies.each do |academy|%>
-                <label class="btn btn-primary">
-                  <input type="radio" name="options" value="<%=academy.id%>" autocomplete="off"><%=academy.name%>
-                </label>
 
-              <%end%>
-            </div>
-
-      </div>
-      <div class="col-xs-12">
-          </div>
 
           <table class="table table-hover">
              <thead>
@@ -38,6 +23,7 @@
                   <th>Description</th>
                   <th>Lender</th>
                   <th>Borrower</th>
+                  <th>Academy</th>
                   <th>Due Date</th>
                   <th>Status</th>
                   <th>Actions</th>
@@ -50,7 +36,8 @@
               <% if item.current %>
                 <th><%= item.current.lender.name %></th>
                 <th><%= item.current.borrower.name %></th>
-                <%if item.current.due_date.to_date < Date.current.to_date%>
+                <th><%= item.academy.try(:name) %></th>
+                <%if item.current.due_date.to_date < @date.to_date%>
                   <th class="due"><%= item.current.due_date%></th>
                 <%else%>
                   <th><%= item.current.due_date%></th>
@@ -61,6 +48,7 @@
                 <!-- Leaves empty space where lender and borrower should be -->
                 <th></th>
                 <th></th>
+                <th><%= item.academy.try(:name) %></th>
                 <th></th>
                 <th class="available">Available</th>
                 <!-- Shows availability? -->

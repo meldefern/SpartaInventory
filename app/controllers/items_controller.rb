@@ -8,6 +8,8 @@ class ItemsController < ApplicationController
     # @items = Item.order(:id)
     @items = Item.order(:id)
     @academies = Academy.all
+    @date = Date.current
+
     @out = @items.to_a.reduce(0) do |total , item|
       if item.current != nil then total += 1 end
       total
@@ -28,6 +30,7 @@ class ItemsController < ApplicationController
   # GET /items/new
   def new
     @item = Item.new
+    @academies = Academy.all
   end
 
   # GET /items/1/edit
@@ -92,7 +95,6 @@ class ItemsController < ApplicationController
       if item.current
         item.current.lender = User.find item.logs.last.lender_id
         item.current.borrower = User.find item.logs.last.borrower_id
-  
       end
 
       return item
